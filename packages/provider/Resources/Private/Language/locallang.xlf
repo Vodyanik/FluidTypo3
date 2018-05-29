@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" product-name="provider" date="2018-04-25T15:18:17+00:00">
+		<header/>
+		<body>
+			<trans-unit id="flux.standard">
+				<source>Example page</source>
+			</trans-unit>
+			<trans-unit id="flux.standard.description">
+				<source>Description can be entered in LLL file locallang.xlf of extension test</source>
+			</trans-unit>
+			<trans-unit id="flux.newContentWizard.flux">
+				<source>Test Flux</source>
+			</trans-unit>
+			<trans-unit id="flux.newContentWizard.fluxContentContainers">
+                <source>Flux Content Containers</source>
+            </trans-unit>
+			<trans-unit id="flux.newContentWizard.fluxContentElements">
+				<source>Flux Content Elements</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

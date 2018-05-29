@@ -1,0 +1,13 @@
+plugin.tx_provider.view {
+	templateRootPaths.0 = EXT:provider/Resources/Private/Templates/
+	partialRootPaths.0 = EXT:provider/Resources/Private/Partials/
+	layoutRootPaths.0 = EXT:provider/Resources/Private/Layouts/
+}
+
+styles {
+	templates {
+		layoutRootPath = EXT:provider/Resources/Private/Layouts/ContentElements/
+		partialRootPath = EXT:provider/Resources/Private/Partials/ContentElements/
+		templateRootPath = EXT:provider/Resources/Private/Templates/ContentElements/
+	}
+}

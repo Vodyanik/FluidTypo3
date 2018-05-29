@@ -1,0 +1,54 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+    <f:layout name="Content" />
+
+    <f:section name="Configuration">
+        <flux:form id="featuredContentElement" label="Featured Content Element" options="{group: 'FCE'}">
+            <flux:form.option.group value="fluxContentElements" />
+
+            <flux:field.input name="title" label="Title"/>
+            <flux:field.dateTime name="date" label="Date" />
+            <flux:field.text name="description" label="Description" />
+            <flux:field.inline.fal name="images" maxItems="3" minItems="1" />
+        </flux:form>
+    </f:section>
+
+    <f:section name="Preview">
+        <b>Title:</b> {title}<br>
+        <b>Date:</b> <f:format.date format="M Y">{date}</f:format.date><br>
+        <b>Description:</b> <f:format.html>{description}</f:format.html><br>
+        <div class="row">
+            <f:for each="{v:content.resources.fal(field: 'images')}" as="image">
+                <div class="col-xs-2">
+                    <p>{image.title}</p>
+                    <f:image treatIdAsReference="1"
+                             src="{image.id}"
+                             title="{image.title}"
+                             alt="{image.alternative}"
+                             class="img-responsive"/>
+                </div>
+            </f:for>
+        </div>
+    </f:section>
+
+    <f:section name="Main">
+        <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+                <strong class="d-inline-block mb-2 text-primary">World</strong>
+                <h3 class="mb-0">
+                    <a class="text-dark" href="#">{title}</a>
+                </h3>
+                <div class="mb-1 text-muted"><f:format.date format="M Y">{date}</f:format.date></div>
+                <p class="card-text mb-auto">{description}</p>
+                <a href="#">Continue reading</a>
+            </div>
+            <f:for each="{v:content.resources.fal(field: 'images')}" as="image">
+                    <f:image class="card-img-right flex-auto d-none d-lg-block" treatIdAsReference="1" src="{image.id}"
+                             title="{image.title}" alt="{image.alternative}"/>
+            </f:for>
+        </div>
+    </f:section>
+</div>

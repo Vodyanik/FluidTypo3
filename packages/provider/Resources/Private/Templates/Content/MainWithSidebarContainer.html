@@ -1,0 +1,37 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+	<f:layout name="Content" />
+
+	<f:section name="Configuration">
+		<flux:form id="mainWithSidebar" label="Main content container with sidebar" options="{group: 'FCE'}">
+			<flux:form.option.group value="fluxContentContainers" />
+		</flux:form>
+		<flux:grid>
+			<!-- Edit this grid to change the "backend layout" structure -->
+			<flux:grid.row>
+				<flux:grid.column colPos="1" colspan="8" name="main" label="Main" />
+				<flux:grid.column colPos="2" colspan="4" name="sidebar" label="Sidebar" />
+			</flux:grid.row>
+		</flux:grid>
+	</f:section>
+
+	<f:section name="Preview">
+		Main With Sidebar
+	</f:section>
+
+	<f:section name="Main">
+		<main role="main" class="container">
+			<div class="row">
+				<div class="col-md-8 blog-main">
+					<flux:content.render area="main" />
+				</div>
+				<aside class="col-md-4 blog-sidebar">
+					<flux:content.render area="sidebar" />
+				</aside>
+			</div>
+		</main>
+	</f:section>
+</div>

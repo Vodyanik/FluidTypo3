@@ -1,0 +1,18 @@
+{
+    "name": "netzlabor-coding/provider",
+    "type": "typo3-cms-extension",
+    "description": "",
+    "homepage": "http://www.netzlabor-coding.de",
+    "license": ["GPL-2.0+"],
+    "keywords": ["TYPO3 CMS"],
+    "version": "1.0.0",
+    "authors": [],
+    "require": {
+        "typo3/cms-core": "^8.7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "NL\\Provider\\": "Classes"
+        }
+    }
+}

@@ -1,0 +1,52 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+	xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+    <f:layout name="Content" />
+    
+	<f:section name="Configuration">
+		<flux:form id="linksElement" label="Links sidebar" options="{group: 'FCE'}">
+            <flux:form.option.group value="fluxContentElements" />
+
+			<flux:field.input name="title" label="Title"/>
+			<flux:field.input name="githublink" label="GitHub link"/>
+			<flux:field.input name="twitterlink" label="Twitter link"/>
+			<flux:field.input name="facebooklink" label="Facebook link"/>
+		</flux:form>
+	</f:section>
+
+	<f:section name="Preview">
+		<f:if condition="{title}">
+			<b>Title:</b> {title}<br>
+		</f:if>
+		<f:if condition="{githublink}">
+			<b>Github:</b> {githublink}<br>
+		</f:if>
+
+		<f:if condition="{twitterlink}">
+			<b>Twitter:</b> {twitterlink}<br>
+		</f:if>
+
+		<f:if condition="{facebooklink}">
+			<b>Facebook:</b> {facebooklink}<br>
+		</f:if>
+	</f:section>
+
+	<f:section name="Main">
+		<div class="p-3">
+			<h4 class="font-italic"><f:if condition="{title}">{title}</f:if></h4>
+			<ol class="list-unstyled">
+				<f:if condition="{githublink}">
+					<li><a href="{githublink}">GitHub</a></li>
+				</f:if>
+				<f:if condition="{twitterlink}">
+					<li><a href="{twitterlink}">Twitter</a></li>
+				</f:if>
+				<f:if condition="{facebooklink}">
+					<li><a href="{facebooklink}">Facebook</a></li>
+				</f:if>
+			</ol>
+		</div>
+	</f:section>
+</div>

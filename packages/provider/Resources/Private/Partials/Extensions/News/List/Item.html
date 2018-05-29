@@ -1,0 +1,13 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+
+<div class="blog-post">
+	<h2 class="blog-post-title">{newsItem.title}</h2>
+	<p class="blog-post-meta">{f:format.date(date:newsItem.datetime, format:'Y-m-d')} by <a href="#">Chris</a></p>
+	<p>
+		<f:format.html>{newsItem.bodytext}</f:format.html>
+	</p>
+</div>
+
+</html>

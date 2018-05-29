@@ -1,0 +1,33 @@
+plugin.tx_provider {
+	view {
+		templateRootPaths.0 = {$plugin.tx_provider.view.templateRootPaths.0}
+		partialRootPaths.0 = {$plugin.tx_provider.view.partialRootPaths.0}
+		layoutRootPaths.0 = {$plugin.tx_provider.view.layoutRootPaths.0}
+	}
+	settings {
+		list.paginate {
+			insertAbove = 0
+			itemsPerPage {
+				overrideFlexformSettingsIfEmpty = cropMaxCharacters,dateField,timeRestriction,orderBy,orderDirection,backPid,listPid,startingpoint,recursive,list.paginate.itemsPerPage
+			}
+		}
+	}
+}
+
+page {
+	includeCSS {
+		bootstrap = EXT:provider/Resources/Public/Css/bootstrap.min.css
+		blog = EXT:provider/Resources/Public/Css/blog.css
+	}
+
+	includeJSFooterlibs {
+		jquery = EXT:provider/Resources/Public/Js/jquery-3.3.1.min.js
+		jquerySlim = EXT:provider/Resources/Public/Js/jquery-slim.min.js
+		popper = EXT:provider/Resources/Public/Js/popper.min.js
+		bootstrapJs = EXT:provider/Resources/Public/Js/bootstrap.min.js
+		holder = EXT:provider/Resources/Public/Js/holder.min.js
+	}
+}
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:provider/Configuration/TypoScript/Extension/News.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/setup.txt">
